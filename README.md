@@ -143,9 +143,9 @@ This is rather useful when for example you want to comment a specific drawcall o
 
 ### Annotation on a range
 * Select a range of data
-![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/nvGraphy_rangeannot1.png)
+![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/NvGraphy_rangeannot1.png)
 * Write the comment in the dedicated text control
-![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/nvGraphy_rangeannot2.png)
+![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/NvGraphy_rangeannot2.png)
 
 You can remove the comment by selecting it and pressing **delete** key...
 
