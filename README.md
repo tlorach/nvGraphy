@@ -89,8 +89,8 @@ This will show:
 
 Just drop Fraps log files and you will see them...
 
-![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/nvGraphy_FRAPS_FPS.png)
-![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/nvGraphy_FRAPS_Ms.png)
+![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/NvGraphy_FRAPS_FPS.png)
+![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/NvGraphy_FRAPS_Ms.png)
 
 ## display generic data
 nvGraphy can display generic csv files.
@@ -107,7 +107,7 @@ The only restriction is to have a ''frame#'' at the beginning of each line.
 
 Each column will be displayed on a separate display. 
 
-![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/nvGraphy_generic1.png)
+![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/NvGraphy_generic1.png)
 
 If you want to compare values in the same display, you can provide many files. For example 
 
@@ -115,7 +115,7 @@ If you want to compare values in the same display, you can provide many files. F
 
 will display Generic and Generic2 values in the same displays :
 
-![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/nvGraphy_generic2.png)
+![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/NvGraphy_generic2.png)
 
 
 ## Search
