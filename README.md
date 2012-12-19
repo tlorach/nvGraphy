@@ -170,6 +170,6 @@ Note that nvPerfHUD don't export State buckets information : it only exports tim
 
 Simply drop the csv file into nvGraphy:
 
-![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/nvGraphy_nvPerfHUD.png)
+![nvGraphy](https://github.com/tlorach/nvGraphy/raw/master/README_pics/NvGraphy_nvPerfHUD.png)
 
 
