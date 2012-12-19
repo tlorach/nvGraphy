@@ -42,7 +42,7 @@ nvGraphy C:\FolderTest\GPU1 C:\FolderTest\GPU2 -a C:\FolderTest -n incremental_c
 
 Implicit load of “incremental_call_time_log.csv” (when you drag n drop some folders to nvGraphy, for example):
 ````
-nvGraphy C:\FolderTest\ATI C:\FolderTest\NV
+nvGraphy C:\FolderTest\GPU1 C:\FolderTest\GPU2
 ````
 
 ## Keyboard and Mouse controls
@@ -67,7 +67,7 @@ nvGraphy C:\FolderTest\ATI C:\FolderTest\NV
 
 When many benchmark files got generated, you can now take them all and drop them to nvGraphy.
 
-Here we have 2 files (Assassins Creed game) : one for ATI and one for NVIDIA. We can see that some parts show divergences between NV and ATI. This would be the place where we want to start our investigations...
+Here we have 2 files : one for a GPU1 and one for a GPU2. We can see that some parts show divergences . This would be the place where we want to start our investigations...
 
 Note that if you place your cursor over the curve, you will get a 'tooltip' showing you values.
 
