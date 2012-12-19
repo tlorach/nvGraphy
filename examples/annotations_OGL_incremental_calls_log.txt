@@ -1,0 +1,9 @@
+frame,0,1,FBO=1
+frame,48,1,FBO=2
+frame,49,1,FBO=3
+frame,50,1,FBO=4
+frame,51,1,Horizontal Blur
+frame,52,1,Vertical Blur
+frame,53,1,FBO=0
+range,1,47,Body of the Model
+range,48,54,Post-processing

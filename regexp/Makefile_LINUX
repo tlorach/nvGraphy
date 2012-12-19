@@ -1,0 +1,28 @@
+AR=ar
+ARFLAGS=-cr
+RL=ranlib
+RLFLAGS=
+CC=g++
+CXXFLAGS=-I. -c -g -Wall
+
+SRC=          \
+Matcher.cpp   \
+Pattern.cpp   \
+WCMatcher.cpp \
+WCPattern.cpp \
+
+OBJ=$(SRC:.cpp=.o)
+
+libcppre.a: $(OBJ)
+	$(AR) $(ARFLAGS) libcppre.a $(OBJ)
+	$(RL) libcppre.a
+
+test: libcppre.a test.cpp
+	$(CC) $(CXXFLAGS) test.cpp
+	$(CC) -o test -g test.o -L . -lcppre
+
+.cpp.o:
+	$(CC) $(CXXFLAGS) $<
+
+clean:
+	rm -f $(OBJ) *~ libcppre.a

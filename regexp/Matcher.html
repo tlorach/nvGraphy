@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Matcher</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  <A HREF="#DOC.DOCU">Matcher</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>Mutable object used on instances of a Pattern class</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static  const int </TD><TD><B>MATCH_ENTIRE_STRING</B> <BR>
+<I>Used internally by match to signify we want the entire string matched</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.24"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::vector&lt;std::string&gt;  </TD><TD><B>findAll</B> ()<BR>
+<I> Returns a vector of every substring in order which matches the given pattern.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.22"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>bool </TD><TD><B>findFirstMatch</B> ()<BR>
+<I> Scans the string for the first substring matching the pattern.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.23"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>bool </TD><TD><B>findNextMatch</B> ()<BR>
+<I> Scans the string for the next substring matching the pattern.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.29"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>getEndingIndex</B> (const int groupNum = 0) const <BR>
+<I> Returns the ending index of the specified group.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.19"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned long </TD><TD><B>getFlags</B> () const <BR>
+<I> The flags currently being used by the matcher.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.30"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>getGroup</B> (const int groupNum = 0) const <BR>
+<I> Returns the specified group.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.31"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::vector&lt;std::string&gt;  </TD><TD><B>getGroups</B> (const bool includeGroupZero = 0) const <BR>
+<I> Returns every capture group in a vector</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.28"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>getStartingIndex</B> (const int groupNum = 0) const <BR>
+<I> Returns the starting index of the specified group.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.26"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>inline   std::string </TD><TD><B>getString</B> () const <BR>
+<I> Same as getText.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.20"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>getText</B> () const <BR>
+<I> The text being searched by the matcher.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.21"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>bool </TD><TD><B>matches</B> ()<BR>
+<I> Scans the string from start to finish for a match.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.18"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>replaceWithGroups</B> (const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>)<BR>
+<I> Replaces the contents of <code>str</code> with the appropriate captured text.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.25"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>reset</B> ()<BR>
+<I> Resets the internal state of the matcher</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.27"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>inline   void </TD><TD><B>setString</B> (const std::string &amp; newStr)<BR>
+<I> Sets the string to scan </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>~Matcher</B> ()<BR>
+<I>Cleans up the dynamic memory used by this matcher</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int* </TD><TD><B>ends</B> <BR>
+<I>An array of the ending positions for each group</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned long </TD><TD><B>flags</B> <BR>
+<I>The flags with which we were made</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>gc</B> <BR>
+<I>The number of capturing groups we have</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int* </TD><TD><B>groupIndeces</B> <BR>
+<I>An array of private data used by NFANodes during matching</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int* </TD><TD><B>groupPos</B> <BR>
+<I>An array of private data used by NFANodes during matching</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int* </TD><TD><B>groups</B> <BR>
+<I>An array of private data used by NFANodes during matching</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>lm</B> <BR>
+<I>The ending index of the last match</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>matchedSomething</B> <BR>
+<I>Whether or not we have matched something (used only by findFirstMatch and findNextMatch)</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>ncgc</B> <BR>
+<I>The number of non-capturing groups we havew</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="Pattern.html">Pattern</A>* </TD><TD><B>pat</B> <BR>
+<I>The pattern we use to match</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>start</B> <BR>
+<I>The starting point of our match</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int* </TD><TD><B>starts</B> <BR>
+<I>An array of the starting positions for each group</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>str</B> <BR>
+<I>The string in which we are matching</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.2.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>clearGroups</B> ()<BR>
+<I>Called by reset to clear the group arrays</I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+A matcher is a non thread-safe object used to scan strings using a given
+<!1><A HREF="Pattern.html">Pattern</A> object. Using a <code>Matcher</code> is the preferred
+method for scanning strings. Matchers are not thread-safe. Matchers require
+very little dynamic memory, hence one is encouraged to create several
+instances of a matcher when necessary as opposed to sharing a single instance
+of a matcher.
+<p>
+The most common methods needed by the matcher are <code>matches</code>,
+<code>findNextMatch</code>, and <code>getGroup</code>. <code>matches</code>
+and <code>findNextMatch</code> both return success or failure, and further
+details can be gathered from their documentation.
+<p>
+Unlike Java's <code>Matcher</code>, this class allows you to change the string
+you are matching against. This provides a small optimization, since you no
+longer need multiple matchers for a single pattern in a single thread.
+<p>
+This class also provides an extremely handy method for replacing text with
+captured data via the <code>replaceWithGroups</code> method. A typical
+invocation looks like:
+<PRE>
+  char buf[10000];
+  std::string str = "\\5 (user name \\1) uses \\7 for his/her shell and \\6 is their home directory";
+  FILE * fp = fopen("/etc/passwd", "r");
+  Pattern::registerPattern("entry", "[^:]+");
+  Pattern * p = Pattern::compile("^({entry}):({entry}):({entry}):({entry}):({entry}):({entry}):({entry})$",
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pattern::MULTILINE_MATCHING | Pattern::UNIX_LINE_MODE);
+  Matcher * m = p->createMatcher("");
+  while (fgets(buf, 9999, fp))
+  {
+  &nbsp;&nbsp;m->setString(buf);
+  &nbsp;&nbsp;if (m->matches())
+  &nbsp;&nbsp;{
+  &nbsp;&nbsp;&nbsp;&nbsp;printf("%s\n", m->replaceWithGroups(str).c_str());
+  &nbsp;&nbsp;}
+  }
+  fclose(fp);
+
+<P>  </PRE>
+Calling any of the following functions before first calling
+<code>matches</code>, <code>findFirstMatch</code>, or
+<code>findNextMatch</code> results in undefined behavior and may cause your
+program to crash.
+<code>
+<ul>
+<li>replaceWithGroups</code>
+<li>getStartingIndex</li>
+<li>getEndingIndex</li>
+<li>getGroup</li>
+<li>getGroups</li>
+</ul>
+</code>
+<p>
+The function <code>findFirstMatch</code> will attempt to find the first match
+in the input string. The same results can be obtained by first calling
+<code>reset</code> followed by <code>findNextMatch</code>.
+<p>
+To eliminate the necessity of looping through a string to find all the
+matching substrings, <code>findAll</code> was created. The function will find
+all matching substrings and return them in a <code>vector</code>. If you need
+to examine specific capture groups within the substrings, then this method
+should not be used.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="pat"></A>
+<A NAME="DOC.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Pattern.html">Pattern</A>* pat</B></TT>
+<DD>The pattern we use to match
+<DL><DT><DD></DL><P>
+<A NAME="str"></A>
+<A NAME="DOC.2.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string str</B></TT>
+<DD>The string in which we are matching
+<DL><DT><DD></DL><P>
+<A NAME="start"></A>
+<A NAME="DOC.2.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int start</B></TT>
+<DD>The starting point of our match
+<DL><DT><DD></DL><P>
+<A NAME="starts"></A>
+<A NAME="DOC.2.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* starts</B></TT>
+<DD>An array of the starting positions for each group
+<DL><DT><DD></DL><P>
+<A NAME="ends"></A>
+<A NAME="DOC.2.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* ends</B></TT>
+<DD>An array of the ending positions for each group
+<DL><DT><DD></DL><P>
+<A NAME="groups"></A>
+<A NAME="DOC.2.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* groups</B></TT>
+<DD>An array of private data used by NFANodes during matching
+<DL><DT><DD></DL><P>
+<A NAME="groupIndeces"></A>
+<A NAME="DOC.2.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* groupIndeces</B></TT>
+<DD>An array of private data used by NFANodes during matching
+<DL><DT><DD></DL><P>
+<A NAME="groupPos"></A>
+<A NAME="DOC.2.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* groupPos</B></TT>
+<DD>An array of private data used by NFANodes during matching
+<DL><DT><DD></DL><P>
+<A NAME="lm"></A>
+<A NAME="DOC.2.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int lm</B></TT>
+<DD>The ending index of the last match
+<DL><DT><DD></DL><P>
+<A NAME="gc"></A>
+<A NAME="DOC.2.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int gc</B></TT>
+<DD>The number of capturing groups we have
+<DL><DT><DD></DL><P>
+<A NAME="ncgc"></A>
+<A NAME="DOC.2.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int ncgc</B></TT>
+<DD>The number of non-capturing groups we havew
+<DL><DT><DD></DL><P>
+<A NAME="matchedSomething"></A>
+<A NAME="DOC.2.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int matchedSomething</B></TT>
+<DD>Whether or not we have matched something (used only by findFirstMatch and findNextMatch)
+<DL><DT><DD></DL><P>
+<A NAME="flags"></A>
+<A NAME="DOC.2.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>unsigned long flags</B></TT>
+<DD>The flags with which we were made
+<DL><DT><DD></DL><P>
+<A NAME="clearGroups"></A>
+<A NAME="DOC.2.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void clearGroups()</B></TT>
+<DD>Called by reset to clear the group arrays
+<DL><DT><DD></DL><P>
+<A NAME="MATCH_ENTIRE_STRING"></A>
+<A NAME="DOC.2.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static  const int MATCH_ENTIRE_STRING</B></TT>
+<DD>Used internally by match to signify we want the entire string matched
+<DL><DT><DD></DL><P>
+<A NAME="~Matcher"></A>
+<A NAME="DOC.2.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ~Matcher()</B></TT>
+<DD>Cleans up the dynamic memory used by this matcher
+<DL><DT><DD></DL><P>
+<A NAME="replaceWithGroups"></A>
+<A NAME="DOC.2.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string replaceWithGroups(const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>)</B></TT>
+<DD>
+Replaces the contents of <code>str</code> with the appropriate captured
+text. <code>str</code> should have at least one back reference, otherwise
+this function does nothing.
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Matcher.html#DOC.2.3">str</A> The string in which to <!1><A HREF="Pattern.html#DOC.3.42">replace</A> text
+<BR><DT><B>Returns:</B><DD>  A string with all backreferences appropriately replaced<BR><DD></DL><P>
+<A NAME="getFlags"></A>
+<A NAME="DOC.2.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>unsigned long getFlags() const </B></TT>
+<DD>
+The flags currently being used by the matcher.
+
+<DL><DT><DT><B>Returns:</B><DD>  Zero<BR><DD></DL><P>
+<A NAME="getText"></A>
+<A NAME="DOC.2.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string getText() const </B></TT>
+<DD>
+The text being searched by the matcher.
+
+<DL><DT><DT><B>Returns:</B><DD>  the text being searched by the matcher.<BR><DD></DL><P>
+<A NAME="matches"></A>
+<A NAME="DOC.2.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool matches()</B></TT>
+<DD>
+Scans the string from start to finish for a match. The entire string must
+match for this function to return success. Group variables are
+appropriately set and can be queried after this function returns.
+
+<P>
+<DL><DT><DT><B>Returns:</B><DD>  Success if and only if the entire string matches the pattern<BR><DD></DL><P>
+<A NAME="findFirstMatch"></A>
+<A NAME="DOC.2.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool findFirstMatch()</B></TT>
+<DD>
+Scans the string for the first substring matching the pattern. The entire
+string does not necessarily have to match for this function to return
+success. Group variables are appropriately set and can be queried after
+this function returns.
+
+<P>
+<DL><DT><DT><B>Returns:</B><DD>  Success if any substring matches the specified pattern<BR><DD></DL><P>
+<A NAME="findNextMatch"></A>
+<A NAME="DOC.2.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool findNextMatch()</B></TT>
+<DD>
+Scans the string for the next substring matching the pattern. If no calls
+have been made to findFirstMatch of findNextMatch since the last call to
+reset, matches, or setString, then this function's behavior results to
+that of findFirstMatch.
+
+<P>
+<DL><DT><DT><B>Returns:</B><DD>  Success if another substring can be found that matches the pattern<BR><DD></DL><P>
+<A NAME="findAll"></A>
+<A NAME="DOC.2.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::vector&lt;std::string&gt;  findAll()</B></TT>
+<DD>
+Returns a vector of every substring in order which matches the given
+pattern.
+
+<P>
+<DL><DT><DT><B>Returns:</B><DD>  Every substring in order which matches the given pattern<BR><DD></DL><P>
+<A NAME="reset"></A>
+<A NAME="DOC.2.25"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void reset()</B></TT>
+<DD>
+Resets the internal state of the matcher
+<DL><DT><DD></DL><P>
+<A NAME="getString"></A>
+<A NAME="DOC.2.26"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   std::string getString() const </B></TT>
+<DD>
+Same as getText. Left n for backwards compatibilty with old source code
+
+<DL><DT><DT><B>Returns:</B><DD>  Returns the string that is currently being used for matching<BR><DD></DL><P>
+<A NAME="setString"></A>
+<A NAME="DOC.2.27"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>inline   void setString(const std::string &amp; newStr)</B></TT>
+<DD>
+Sets the string to scan
+
+<DL><DT><DT><B>Parameters:</B><DD><B>newStr</B> -  The string to scan for subsequent <!1><A HREF="Matcher.html#DOC.2.21">matches</A><BR><DD></DL><P>
+<A NAME="getStartingIndex"></A>
+<A NAME="DOC.2.28"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int getStartingIndex(const int groupNum = 0) const </B></TT>
+<DD>
+Returns the starting index of the specified group.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>groupNum</B> -  The group to query
+<BR><DT><B>Returns:</B><DD>  The starting index of the group if it was matched, -1 for an
+invalid group or if the group was not matched<BR><DD></DL><P>
+<A NAME="getEndingIndex"></A>
+<A NAME="DOC.2.29"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int getEndingIndex(const int groupNum = 0) const </B></TT>
+<DD>
+Returns the ending index of the specified group.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>groupNum</B> -  The group to query
+<BR><DT><B>Returns:</B><DD>  The ending index of the group if it was matched, -1 for an
+invalid group or if the group was not matched<BR><DD></DL><P>
+<A NAME="getGroup"></A>
+<A NAME="DOC.2.30"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string getGroup(const int groupNum = 0) const </B></TT>
+<DD>
+Returns the specified group. An empty string ("") does not necessarily
+mean the group was not matched. A group such as (a*b?) could be matched by
+a zero length. If an empty string is returned, getStartingIndex can be
+called to determine if the group was actually matched.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>groupNum</B> -  The group to query
+<BR><DT><B>Returns:</B><DD>  The text of the group<BR><DD></DL><P>
+<A NAME="getGroups"></A>
+<A NAME="DOC.2.31"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::vector&lt;std::string&gt;  getGroups(const bool includeGroupZero = 0) const </B></TT>
+<DD>
+Returns every capture group in a vector
+
+<P>
+<DL><DT><DT><B>Parameters:</B><DD><B>includeGroupZero</B> -  Whether or not include capture group zero
+<BR><DT><B>Returns:</B><DD>  Every capture group<BR><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Friends:</B><DD>  class NFANode<BR>  class NFAStartNode<BR>  class NFAEndNode<BR>  class NFAGroupHeadNode<BR>  class NFAGroupLoopNode<BR>  class NFAGroupLoopPrologueNode<BR>  class NFAGroupTailNode<BR>  class NFALookBehindNode<BR>  class NFAStartOfLineNode<BR>  class NFAEndOfLineNode<BR>  class NFAEndOfMatchNode<BR>  class NFAReferenceNode<BR>  class <!1><A HREF="Pattern.html">Pattern</A><BR><DT><B>Author:</B><DD>Jeffery Stuart
+
+<DT><B>Version:</B><DD>0.01a
+
+<DT><B>Since:</B><DD>March 2003, Stable Since November 2004
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

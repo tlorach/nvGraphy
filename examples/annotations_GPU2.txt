@@ -1,0 +1,8 @@
+frame,0,1,Clear
+frame,1,1,Clear
+frame,755,1,Clear
+frame,1769,1,Clear
+frame,2856,1,Clear
+frame,3585,1,Clear
+frame,3609,1,Clear
+range,2544,3440,Divergence

@@ -1,0 +1,1669 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Pattern</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<TABLE BORDER=0><TR>
+<TD VALIGN=TOP><H2>class  <A HREF="#DOC.DOCU">Pattern</A></H2></TD></H2></TD></TR></TABLE>
+<BLOCKQUOTE>A class used to represent "PERL 5"-ish regular expressions</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><TABLE>
+<DT><H3>Public Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.33"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static  const unsigned long </TD><TD><B>CASE_INSENSITIVE</B> <BR>
+<I>We should match regardless of case</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.35"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static  const unsigned long </TD><TD><B>DOT_MATCHES_ALL</B> <BR>
+<I>We should treat a <code><b>.</b></code> as [\x00-\x7F]</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.34"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static  const unsigned long </TD><TD><B>LITERAL</B> <BR>
+<I>We are implicitly quoted</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.39"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static  const int </TD><TD><B>MAX_QMATCH</B> <BR>
+<I>The absolute maximum number of matches a quantifier can match (0x7FFFFFFF)</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.38"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static  const int </TD><TD><B>MIN_QMATCH</B> <BR>
+<I>The absolute minimum number of matches a quantifier can match (0)</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.36"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static  const unsigned long </TD><TD><B>MULTILINE_MATCHING</B> <BR>
+<I><code>^</code> and <code>$</code> should anchor to the beginning and ending of lines, not all input</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.37"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static  const unsigned long </TD><TD><B>UNIX_LINE_MODE</B> <BR>
+<I>When enabled, only instances of <code>\n</codes> are recognized as line terminators</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Public Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.48"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   void </TD><TD><B>clearPatternCache</B> ()<BR>
+<I> Don't use</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.40"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   <!1><A HREF="Pattern.html">Pattern</A>* </TD><TD><B>compile</B> (const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const unsigned long mode = 0)<BR>
+<I> Call this function to compile a regular expression into a <code>Pattern</code> object.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.41"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   <!1><A HREF="Pattern.html">Pattern</A>* </TD><TD><B>compileAndKeep</B> (const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const unsigned long mode = 0)<BR>
+<I> Dont use this function.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.53"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="Matcher.html">Matcher</A>* </TD><TD><B>createMatcher</B> (const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>)<BR>
+<I> Creates a matcher object using the specified string and this pattern.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.44"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   std::vector&lt;std::string&gt;  </TD><TD><B>findAll</B> (const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const unsigned long mode = 0)<BR>
+<I> Finds all the instances of the specified pattern within the string.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.49"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   std::pair&lt;std::string, int&gt;  </TD><TD><B>findNthMatch</B> (const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const int matchNum, const unsigned long mode = 0)<BR>
+<I> Searches through a string for the <code>n<sup>th</sup></code> match of the given pattern in the string.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.51"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned long </TD><TD><B>getFlags</B> () const <BR>
+<I> Returns the flags used during compilation of this pattern </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.52"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>getPattern</B> () const <BR>
+<I> Returns the regular expression this pattern represents </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.45"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   bool </TD><TD><B>matches</B> (const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const unsigned long mode = 0)<BR>
+<I> Determines if an entire string matches the specified pattern</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.46"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   bool </TD><TD><B>registerPattern</B> (const std::string &amp; name, const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const unsigned long mode = 0)<BR>
+<I> Registers a pattern under a specific name for use in later compilations.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.42"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   std::string </TD><TD><B>replace</B> (const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.42">replace</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const unsigned long mode = 0)<BR>
+<I> Searches through <code>replace</code> and replaces all substrings matched by <code>pattern</code> with <code>str</code>.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.43"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   std::vector&lt;std::string&gt;  </TD><TD><B>split</B> (const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const bool keepEmptys = 0, const unsigned long limit = 0, const unsigned long mode = 0)<BR>
+<I> Splits the specified string over occurrences of the specified pattern.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.47"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   void </TD><TD><B>unregisterPatterns</B> ()<BR>
+<I> Clears the pattern registry</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.50"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> </TD><TD><B>~Pattern</B> ()<BR>
+<I> Deletes all NFA nodes allocated during compilation</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Fields</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   std::map&lt;std::string, <!1><A HREF="Pattern.html">Pattern</A> *&gt;  </TD><TD><B>compiledPatterns</B> <BR>
+<I>Holds all the compiled patterns for quick access.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>curInd</B> <BR>
+<I> Used during compilation to keep track of the current index into <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code>.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>bool </TD><TD><B>error</B> <BR>
+<I> Flag used during compilation.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned long </TD><TD><B>flags</B> <BR>
+<I> The flags specified when this was compiled</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>groupCount</B> <BR>
+<I> The number of capture groups this contains</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>NFANode* </TD><TD><B>head</B> <BR>
+<I> The front node of the NFA</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="Matcher.html">Matcher</A>* </TD><TD><B>matcher</B> <BR>
+<I> Used when methods like split are called.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::map&lt;NFANode*, bool&gt;  </TD><TD><B>nodes</B> <BR>
+<I> Holds all the NFA nodes used.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>nonCapGroupCount</B> <BR>
+<I> The number of non-capture groups this contains</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>pattern</B> <BR>
+<I> The actual regular expression we rerpesent</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>static   std::map&lt;std::string, std::pair&lt;std::string, unsigned long&gt; &gt;  </TD><TD><B>registeredPatterns</B> <BR>
+<I> Holds all of the registered patterns as strings.</I>
+</TD></TR></TABLE></P>
+
+<P><TABLE>
+<DT><H3>Protected Methods</H3><DD><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.18"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>classCreateRange</B> (char low, char hi) const <BR>
+<I> Creates a new "class" representing the range from <code>low</code> thru <code>hi</code>.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>classIntersect</B> (std::string s1, std::string s2) const <BR>
+<I> Calculates the intersection of two strings.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>classNegate</B> (std::string s1) const <BR>
+<I> Calculates the negation of a string.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>classUnion</B> (std::string s1, std::string s2) const <BR>
+<I> Calculates the union of two strings.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.19"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int </TD><TD><B>getInt</B> (int <!1><A HREF="Matcher.html#DOC.2.4">start</A>, int end)<BR>
+<I> Extracts a decimal number from the substring of member-variable <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code> starting at <code>start</code> and ending at <code>end</code>.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.32"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>NFANode* </TD><TD><B>parse</B> (const bool inParen = 0, const bool inOr = 0, NFANode**  end = NULL)<BR>
+<I> Parses <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A></code>.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.27"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>NFANode* </TD><TD><B>parseBackref</B> ()<BR>
+<I> Returns a new node representing the back reference being parsed </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.30"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>NFANode* </TD><TD><B>parseBehind</B> (const bool pos, NFANode**  end)<BR>
+<I> Parses a lookbehind expression.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.23"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>parseClass</B> ()<BR>
+<I> Parses the current class being examined in <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A></code>.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.28"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>parseEscape</B> (bool &amp; inv, bool &amp; quo)<BR>
+<I> Parses the escape sequence currently being examined.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.26"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>parseHex</B> ()<BR>
+<I> Returns a string containing the hex character being parsed </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.25"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>parseOctal</B> ()<BR>
+<I> Returns a string containing the octal character being parsed </I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.24"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>std::string </TD><TD><B>parsePosix</B> ()<BR>
+<I> Parses the current POSIX class being examined in <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A></code>.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.31"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>NFANode* </TD><TD><B>parseQuote</B> ()<BR>
+<I> Parses the current expression and tacks on nodes until a \E is found.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.29"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>NFANode* </TD><TD><B>parseRegisteredPattern</B> (NFANode**  end)<BR>
+<I> Parses a supposed registered pattern currently under compilation.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.22"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>NFANode* </TD><TD><B>quantify</B> (NFANode*  newNode)<BR>
+<I> Tries to quantify the last parsed expression.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.20"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>bool </TD><TD><B>quantifyCurly</B> (int &amp; sNum, int &amp; eNum)<BR>
+<I> Parses a <code>{n,m}</code> string out of the member-variable <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code> stores the result in <code>sNum</code> and <code>eNum</code>.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.21"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>NFANode* </TD><TD><B>quantifyGroup</B> (NFANode*  <!1><A HREF="Matcher.html#DOC.2.4">start</A>, NFANode*  stop, const int gn)<BR>
+<I> Tries to quantify the currently parsed group.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void </TD><TD><B>raiseError</B> ()<BR>
+<I> Raises an error during compilation.</I>
+</TD></TR><TR>
+<TD VALIGN=TOP><A HREF="#DOC.3.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>NFANode* </TD><TD><B>registerNode</B> (NFANode*  node)<BR>
+<I> Convenience function for registering a node in <code>nodes</code>.</I>
+</TD></TR></TABLE></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This pattern class is very similar in functionality to Java's
+javautilregexPattern class. The pattern class represents an immutable
+regular expression object. Instead of having a single object contain both the
+regular expression object and the matching object, instead the two objects are
+split apart. The <!1><A HREF="Matcher.html">Matcher</A> class represents the maching
+object.
+
+<P>The Pattern class works primarily off of "compiled" patterns. A typical
+instantiation of a regular expression looks like:
+
+<P><PRE>
+  Pattern * p = Pattern::compile("a*b");
+  Matcher * m = p->createMatcher("aaaaaab");
+  if (m->matches()) ...
+  </PRE>
+
+<P>However, if you do not need to use a pattern more than once, it is often times
+okay to use the Pattern's static methods insteads. An example looks like this:
+
+<P><PRE>
+  if (Pattern::matches("a*b", "aaaab")) { ... }
+  </PRE>
+
+<P>This class does not currently support unicode. The unicode update for this
+class is coming soon.
+
+<P>This class is partially immutable. It is completely safe to call createMatcher
+concurrently in different threads, but the other functions (e.g. split) should
+not be called concurrently on the same <code>Pattern</code>.
+
+<P><table border="0" cellpadding="1" cellspacing="0">
+<tr align="left" bgcolor="#CCCCFF">
+<td>
+<b>Construct</b>
+</td>
+<td>
+<b>Matches</b>
+</th>
+</tr>
+<tr>
+<td colspan="2">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Characters</b>
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x</i></code>
+</td>
+<td>
+The character <code><i>x</i></code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\\</code>
+</td>
+<td>
+The character <code>\</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\0<i>nn</i></code>
+</td>
+<td>
+The character with octal ASCII value <code><i>nn</i></code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\0<i>nnn</i></code>
+</td>
+<td>
+The character with octal ASCII value <code><i>nnn</i></code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\x<i>hh</i></code>
+</td>
+<td>
+The character with hexadecimal ASCII value <code><i>hh</i></code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\t</code>
+</td>
+<td>
+A tab character
+</td>
+</tr>
+<tr>
+<td>
+<code>\r</code>
+</td>
+<td>
+A carriage return character
+</td>
+</tr>
+<tr>
+<td>
+<code>\n</code>
+</td>
+<td>
+A new-line character
+</td>
+</tr>
+<tr>
+<td colspan="2">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+<b>Character Classes</b>
+</td>
+</tr>
+<tr>
+<td>
+<code>[abc]</code>
+</td>
+<td>
+Either <code>a</code>, <code>b</code>, or <code>c</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>[^abc]</code>
+</td>
+<td>
+Any character but <code>a</code>, <code>b</code>, or <code>c</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>[a-zA-Z]</code>
+</td>
+<td>
+Any character ranging from <code>a</code> thru <code>z</code>, or
+<code>A</code> thru <code>Z</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>[^a-zA-Z]</code>
+</td>
+<td>
+Any character except those ranging from <code>a</code> thru
+<code>z</code>, or <code>A</code> thru <code>Z</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>[a\-z]</code>
+</td>
+<td>
+Either <code>a</code>, <code>-</code>, or <code>z</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>[a-z[A-Z]]</code>
+</td>
+<td>
+Same as <code>[a-zA-Z]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>[a-z&&[g-i]]</code>
+</td>
+<td>
+Any character in the intersection of <code>a-z</code> and
+<code>g-i</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>[a-z&&[^g-i]]</code>
+</td>
+<td>
+Any character in <code>a-z</code> and not in <code>g-i</code>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Prefefined character classes</b>
+</td>
+</tr>
+<tr>
+<td>
+<code><b>.</b></code>
+</td>
+<td>
+Any character. Multiline matching must be compiled into the pattern for
+<code><b>.</b></code> to match a <code>\r</code> or a <code>\n</code>.
+Even if multiline matching is enabled, <code><b>.</b></code> will not
+match a <code>\r\n</code>, only a <code>\r</code> or a <code>\n</code>.
+</td>
+</tr>
+<tr>
+<td>
+<code>\d</code>
+</td>
+<td>
+<code>[0-9]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\D</code>
+</td>
+<td>
+<code>[^\d]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\s</code>
+</td>
+<td>
+<code>[&nbsp;\t\r\n\x0B]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\S</code>
+</td>
+<td>
+<code>[^\s]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\w</code>
+</td>
+<td>
+<code>[a-zA-Z0-9_]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\W</code>
+</td>
+<td>
+<code>[^\w]</code>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>POSIX character classes
+</td>
+</tr>
+<tr>
+<td>
+<code>\p{Lower}</code>
+</td>
+<td>
+<code>[a-z]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\p{Upper}</code>
+</td>
+<td>
+<code>[A-Z]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\p{ASCII}</code>
+</td>
+<td>
+<code>[\x00-\x7F]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\p{Alpha}</code>
+</td>
+<td>
+<code>[a-zA-Z]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\p{Digit}</code>
+</td>
+<td>
+<code>[0-9]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\p{Alnum}</code>
+</td>
+<td>
+<code>[\w&&[^_]]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\p{Punct}</code>
+</td>
+<td>
+<code>[!"#$%&'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~]</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\p{XDigit}</code>
+</td>
+<td>
+<code>[a-fA-F0-9]</code>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Boundary Matches</b>
+</td>
+</tr>
+<tr>
+<td>
+<code>^</code>
+</td>
+<td>
+The beginning of a line. Also matches the beginning of input.
+</td>
+</tr>
+<tr>
+<td>
+<code>$</code>
+</td>
+<td>
+The end of a line. Also matches the end of input.
+</td>
+</tr>
+<tr>
+<td>
+<code>\b</code>
+</td>
+<td>
+A word boundary
+</td>
+</tr>
+<tr>
+<td>
+<code>\B</code>
+</td>
+<td>
+A non word boundary
+</td>
+</tr>
+<tr>
+<td>
+<code>\A</code>
+</td>
+<td>
+The beginning of input
+</td>
+</tr>
+<tr>
+<td>
+<code>\G</code>
+</td>
+<td>
+The end of the previous match. Ensures that a "next" match will only
+happen if it begins with the character immediately following the end of
+the "current" match.
+</td>
+</tr>
+<tr>
+<td>
+<code>\Z</code>
+</td>
+<td>
+The end of input. Will also match if there is a single trailing
+<code>\r\n</code>, a single trailing <code>\r</code>, or a single
+trailing <code>\n</code>.
+</td>
+</tr>
+<tr>
+<td>
+<code>\z</code>
+</td>
+<td>
+The end of input
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Greedy Quantifiers</b>
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x?</i></code>
+</td>
+<td>
+<i>x</i>, either zero times or one time
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x*</i></code>
+</td>
+<td>
+<i>x</i>, zero or more times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x+</i></code>
+</td>
+<td>
+<i>x</i>, one or more times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{n}</i></code>
+</td>
+<td>
+<i>x</i>, exactly n times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{n,}</i></code>
+</td>
+<td>
+<i>x</i>, at least <code><i>n</i></code> times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{,m}</i></code>
+</td>
+<td>
+<i>x</i>, at most <code><i>m</i></code> times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{n,m}</i></code>
+</td>
+<td>
+<i>x</i>, at least <code><i>n</i></code> times and at most
+<code><i>m</i></code> times
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Possessive Quantifiers</b>
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x?+</i></code>
+</td>
+<td>
+<i>x</i>, either zero times or one time
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x*+</i></code>
+</td>
+<td>
+<i>x</i>, zero or more times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x++</i></code>
+</td>
+<td>
+<i>x</i>, one or more times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{n}+</i></code>
+</td>
+<td>
+<i>x</i>, exactly n times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{n,}+</i></code>
+</td>
+<td>
+<i>x</i>, at least <code><i>n</i></code> times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{,m}+</i></code>
+</td>
+<td>
+<i>x</i>, at most <code><i>m</i></code> times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{n,m}+</i></code>
+</td>
+<td>
+<i>x</i>, at least <code><i>n</i></code> times and at most
+<code><i>m</i></code> times
+</td>
+</tr>
+<tr>
+<td colspan="2">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Reluctant Quantifiers</b>
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x??</i></code>
+</td>
+<td>
+<i>x</i>, either zero times or one time
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x*?</i></code>
+</td>
+<td>
+<i>x</i>, zero or more times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x+?</i></code>
+</td>
+<td>
+<i>x</i>, one or more times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{n}?</i></code>
+</td>
+<td>
+<i>x</i>, exactly n times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{n,}?</i></code>
+</td>
+<td>
+<i>x</i>, at least <code><i>n</i></code> times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{,m}?</i></code>
+</td>
+<td>
+<i>x</i>, at most <code><i>m</i></code> times
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x{n,m}?</i></code>
+</td>
+<td>
+<i>x</i>, at least <code><i>n</i></code> times and at most
+<code><i>m</i></code> times
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Operators</b>
+</td>
+</tr>
+<tr>
+<td>
+<code><i>xy</i></code>
+</td>
+<td>
+<code><i>x</i></code> then <code><i>y</i></code>
+</td>
+</tr>
+<tr>
+<td>
+<code><i>x</i></code>|<code><i>y</i></code>
+</td>
+<td>
+<code><i>x</i></code> or <code><i>y</i></code>
+</td>
+</tr>
+<tr>
+<td>
+<code>(<i>x</i>)</code>
+</td>
+<td>
+<code><i>x</i></code> as a capturing group
+</td>
+</tr>
+<tr>
+<td colspan="2">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Quoting</b>
+</td>
+</tr>
+<tr>
+<td>
+<code>\Q</code>
+</td>
+<td>
+Nothing, but treat every character (including \s) literally until a
+matching <code>\E</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>\E</code>
+</td>
+<td>
+Nothing, but ends its matching <code>\Q</code>
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Special Constructs</b>
+</td>
+</tr>
+<tr>
+<td>
+<code>(?:<i>x</i>)</code>
+</td>
+<td>
+<code><i>x</i></code>, but not as a capturing group
+</td>
+</tr>
+<tr>
+<td>
+<code>(?=<i>x</i>)</code>
+</td>
+<td>
+<code><i>x</i></code>, via positive lookahead. This means that the
+expression will match only if it is trailed by <code><i>x</i></code>.
+It will not "eat" any of the characters matched by
+<code><i>x</i></code>.
+</td>
+</tr>
+<tr>
+<td>
+<code>(?!<i>x</i>)</code>
+</td>
+<td>
+<code><i>x</i></code>, via negative lookahead. This means that the
+expression will match only if it is not trailed by
+<code><i>x</i></code>. It will not "eat" any of the characters
+matched by <code><i>x</i></code>.
+</td>
+</tr>
+<tr>
+<td>
+<code>(?<=<i>x</i>)</code>
+</td>
+<td>
+<code><i>x</i></code>, via positive lookbehind. <code><i>x</i></code>
+cannot contain any quantifiers.
+</td>
+</tr>
+<tr>
+<td>
+<code>(?<!<i>x</i>)</code>
+</td>
+<td>
+<code><i>x</i></code>, via negative lookbehind. <code><i>x</i></code>
+cannot contain any quantifiers.
+</td>
+</tr>
+<tr>
+<td>
+<code>(?><i>x</i>)</code>
+</td>
+<td>
+<code><i>x</i>{1}+</code>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<b>Registered Expression Matching</b>
+</td>
+</tr>
+<tr>
+<td>
+<code>{<i>x</i>}</code>
+</td>
+<td>
+The registered pattern <code><i>x</i></code>
+</td>
+</tr>
+</table>
+
+<P><hr>
+
+<P><i>Begin Text Extracted And Modified From java.util.regex.Pattern documentation</i>
+
+<P><h4> Backslashes, escapes, and quoting </h4>
+
+<P><p> The backslash character (<tt>'\'</tt>) serves to introduce escaped
+constructs, as defined in the table above, as well as to quote characters
+that otherwise would be interpreted as unescaped constructs.  Thus the
+expression <tt>\\</tt> matches a single backslash and <tt>\{</tt> matches a
+left brace.
+
+<P><p> It is an error to use a backslash prior to any alphabetic character that
+does not denote an escaped construct; these are reserved for future
+extensions to the regular-expression language.  A backslash may be used
+prior to a non-alphabetic character regardless of whether that character is
+part of an unescaped construct.
+
+<P><p>It is necessary to double backslashes in string literals that represent
+regular expressions to protect them from interpretation by a compiler.  The
+string literal <tt>"&#92;b"</tt>, for example, matches a single backspace
+character when interpreted as a regular expression, while
+<tt>"&#92;&#92;b"</tt> matches a word boundary.  The string litera
+<tt>"&#92;(hello&#92;)"</tt> is illegal and leads to a compile-time error;
+in order to match the string <tt>(hello)</tt> the string literal
+<tt>"&#92;&#92;(hello&#92;&#92;)"</tt> must be used.
+
+<P><h4> Character Classes </h4>
+
+<P><p> Character classes may appear within other character classes, and
+may be composed by the union operator (implicit) and the intersection
+operator (<tt>&amp;&amp;</tt>).
+The union operator denotes a class that contains every character that is
+in at least one of its operand classes.  The intersection operator
+denotes a class that contains every character that is in both of its
+operand classes.
+
+<P><p> The precedence of character-class operators is as follows, from
+highest to lowest:
+
+<P><blockquote><table border="0" cellpadding="1" cellspacing="0"
+summary="Precedence of character class operators.">
+
+<P><tr><th>1&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<td>Literal escape&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><tt>\x</tt></td></tr>
+<tr><th>2&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<td>Range</td>
+<td><tt>a-z</tt></td></tr>
+<tr><th>3&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<td>Grouping</td>
+<td><tt>[...]</tt></td></tr>
+<tr><th>4&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<td>Intersection</td>
+<td><tt>[a-z&&[aeiou]]</tt></td></tr>
+<tr><th>5&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<td>Union</td>
+<td><tt>[a-e][i-u]<tt></td></tr>
+</table></blockquote>
+
+<P><p> Note that a different set of metacharacters are in effect inside
+a character class than outside a character class. For instance, the
+regular expression <tt>.</tt> loses its special meaning inside a
+character class, while the expression <tt>-</tt> becomes a range
+forming metacharacter.
+
+<P><a name="lt">
+
+<P><a name="cg">
+<h4> Groups and capturing </h4>
+
+<P><p> Capturing groups are numbered by counting their opening parentheses from
+left to right.  In the expression <tt>((A)(B(C)))</tt>, for example, there
+are four such groups: </p>
+
+<P><blockquote><table cellpadding=1 cellspacing=0 summary="Capturing group numberings">
+
+<P><tr><th>1&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<td><tt>((A)(B(C)))</tt></td></tr>
+<tr><th>2&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<td><tt>(A)</tt></td></tr>
+<tr><th>3&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<td><tt>(B(C))</tt></td></tr>
+
+<P><tr><th>4&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<td><tt>(C)</tt></td></tr>
+</table></blockquote>
+
+<P><p> Group zero always stands for the entire expression.
+
+<P><p> Capturing groups are so named because, during a match, each subsequence
+of the input sequence that matches such a group is saved.  The captured
+subsequence may be used later in the expression, via a back reference, and
+may also be retrieved from the matcher once the match operation is complete.
+
+<P><p> The captured input associated with a group is always the subsequence
+that the group most recently matched.  If a group is evaluated a second time
+because of quantification then its previously-captured value, if any, will
+be retained if the second evaluation fails.  Matching the string
+<tt>"aba"</tt> against the expression <tt>(a(b)?)+</tt>, for example, leaves
+group two set to <tt>"b"</tt>.  All captured input is discarded at the
+beginning of each match.
+
+<P><p> Groups beginning with <tt>(?</tt> are pure, <i>non-capturing</i> groups
+that do not capture text and do not count towards the group total.
+
+<P>
+<h4> Unicode support </h4>
+
+<P><p> Coming Soon.
+
+<P><h4> Comparison to Perl 5 </h4>
+
+<P><p>The <code>Pattern</code> engine performs traditional NFA-based matching
+with ordered alternation as occurs in Perl 5.
+
+<P><p> Perl constructs not supported by this class: </p>
+
+<P><ul>
+
+<P><li><p> The conditional constructs <tt>(?{</tt><i>X</i><tt>})</tt> and
+<tt>(?(</tt><i>condition</i><tt>)</tt><i>X</i><tt>|</tt><i>Y</i><tt>)</tt>,
+</p></li>
+
+<P><li><p> The embedded code constructs <tt>(?{</tt><i>code</i><tt>})</tt>
+and <tt>(??{</tt><i>code</i><tt>})</tt>,</p></li>
+
+<P><li><p> The embedded comment syntax <tt>(?#comment)</tt>, and </p></li>
+
+<P><li><p> The preprocessing operations <tt>\l</tt> <tt>&#92;u</tt>,
+<tt>\L</tt>, and <tt>\U</tt>.  </p></li>
+
+<P><li><p> Embedded flags</p></li>
+
+<P></ul>
+
+<P><p> Constructs supported by this class but not by Perl: </p>
+
+<P><ul>
+
+<P><li><p> Possessive quantifiers, which greedily match as much as they can
+and do not back off, even when doing so would allow the overall match to
+succeed.  </p></li>
+
+<P><li><p> Character-class union and intersection as described
+above.</p></li>
+
+<P></ul>
+
+<P><p> Notable differences from Perl: </p>
+
+<P><ul>
+
+<P><li><p> In Perl, <tt>\1</tt> through <tt>\9</tt> are always interpreted
+as back references; a backslash-escaped number greater than <tt>9</tt> is
+treated as a back reference if at least that many subexpressions exist,
+otherwise it is interpreted, if possible, as an octal escape.  In this
+class octal escapes must always begin with a zero. In this class,
+<tt>\1</tt> through <tt>\9</tt> are always interpreted as back
+references, and a larger number is accepted as a back reference if at
+least that many subexpressions exist at that point in the regular
+expression, otherwise the parser will drop digits until the number is
+smaller or equal to the existing number of groups or it is one digit.
+</p></li>
+
+<P><li><p> Perl uses the <tt>g</tt> flag to request a match that resumes
+where the last match left off.  This functionality is provided implicitly
+by the <CODE>Matcher</CODE> class: Repeated invocations of the
+<code>find</code> method will resume where the last match left off,
+unless the matcher is reset.  </p></li>
+
+<P><li><p> Perl is forgiving about malformed matching constructs, as in the
+expression <tt>*a</tt>, as well as dangling brackets, as in the
+expression <tt>abc]</tt>, and treats them as literals.  This
+class also strict and will not compile a pattern when dangling characters
+are encountered.</p></li>
+
+<P></ul>
+
+<P>
+<p> For a more precise description of the behavior of regular expression
+constructs, please see <a href="http://www.oreilly.com/catalog/regex2/">
+<i>Mastering Regular Expressions, 2nd Edition</i>, Jeffrey E. F. Friedl,
+O'Reilly and Associates, 2002.</a>
+</p>
+<P>
+
+<P><i>End Text Extracted And Modified From java.util.regex.Pattern documentation</i>
+
+<P><hr>
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="compiledPatterns"></A>
+<A NAME="DOC.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   std::map&lt;std::string, <!1><A HREF="Pattern.html">Pattern</A> *&gt;  compiledPatterns</B></TT>
+<DD>
+This currently is not used, so don't try to do anything with it.
+
+<DL><DT><DD></DL><P>
+<A NAME="registeredPatterns"></A>
+<A NAME="DOC.3.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   std::map&lt;std::string, std::pair&lt;std::string, unsigned long&gt; &gt;  registeredPatterns</B></TT>
+<DD>
+Holds all of the registered patterns as strings. Due to certain problems
+with compilation of patterns, especially with capturing groups, this seemed
+to be the best way to do it.
+<DL><DT><DD></DL><P>
+<A NAME="nodes"></A>
+<A NAME="DOC.3.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::map&lt;NFANode*, bool&gt;  nodes</B></TT>
+<DD>
+Holds all the NFA nodes used. This makes deletion of a pattern, as well as
+clean-up from an unsuccessful compile much easier and faster.
+<DL><DT><DD></DL><P>
+<A NAME="matcher"></A>
+<A NAME="DOC.3.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Matcher.html">Matcher</A>* matcher</B></TT>
+<DD>
+Used when methods like split are called. The matcher class uses a lot of
+dynamic memeory, so having an instance increases speedup of certain
+operations.
+<DL><DT><DD></DL><P>
+<A NAME="head"></A>
+<A NAME="DOC.3.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>NFANode* head</B></TT>
+<DD>
+The front node of the NFA
+<DL><DT><DD></DL><P>
+<A NAME="pattern"></A>
+<A NAME="DOC.3.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string pattern</B></TT>
+<DD>
+The actual regular expression we rerpesent
+<DL><DT><DD></DL><P>
+<A NAME="error"></A>
+<A NAME="DOC.3.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool error</B></TT>
+<DD>
+Flag used during compilation. Once the pattern is successfully compiled,
+<code>error</code> is no longer used.
+<DL><DT><DD></DL><P>
+<A NAME="curInd"></A>
+<A NAME="DOC.3.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int curInd</B></TT>
+<DD>
+Used during compilation to keep track of the current index into
+<code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code>.  Once the pattern is successfully
+compiled, <code>error</code> is no longer used.
+<DL><DT><DD></DL><P>
+<A NAME="groupCount"></A>
+<A NAME="DOC.3.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int groupCount</B></TT>
+<DD>
+The number of capture groups this contains
+<DL><DT><DD></DL><P>
+<A NAME="nonCapGroupCount"></A>
+<A NAME="DOC.3.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int nonCapGroupCount</B></TT>
+<DD>
+The number of non-capture groups this contains
+<DL><DT><DD></DL><P>
+<A NAME="flags"></A>
+<A NAME="DOC.3.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>unsigned long flags</B></TT>
+<DD>
+The flags specified when this was compiled
+<DL><DT><DD></DL><P>
+<A NAME="raiseError"></A>
+<A NAME="DOC.3.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void raiseError()</B></TT>
+<DD>
+Raises an error during compilation. Compilation will cease at that point
+and compile will return <code>NULL</code>.
+<DL><DT><DD></DL><P>
+<A NAME="registerNode"></A>
+<A NAME="DOC.3.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>NFANode* registerNode(NFANode*  node)</B></TT>
+<DD>
+Convenience function for registering a node in <code>nodes</code>.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>node</B> -  The node to register
+<BR><DT><B>Returns:</B><DD>  The registered node<BR><DD></DL><P>
+<A NAME="classUnion"></A>
+<A NAME="DOC.3.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string classUnion(std::string s1, std::string s2) const </B></TT>
+<DD>
+Calculates the union of two strings. This function will first sort the
+strings and then use a simple selection algorithm to find the union.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>s1</B> -  The first "class" to union
+<BR><B>s2</B> -  The second "class" to union
+<BR><DT><B>Returns:</B><DD>  A new string containing all unique characters. Each character
+must have appeared in one or both of <code>s1</code> and
+<code>s2</code>.<BR><DD></DL><P>
+<A NAME="classIntersect"></A>
+<A NAME="DOC.3.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string classIntersect(std::string s1, std::string s2) const </B></TT>
+<DD>
+Calculates the intersection of two strings. This function will first sort
+the strings and then use a simple selection algorithm to find the
+intersection.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>s1</B> -  The first "class" to intersect
+<BR><B>s2</B> -  The second "class" to intersect
+<BR><DT><B>Returns:</B><DD>  A new string containing all unique characters. Each character
+must have appeared both <code>s1</code> and <code>s2</code>.<BR><DD></DL><P>
+<A NAME="classNegate"></A>
+<A NAME="DOC.3.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string classNegate(std::string s1) const </B></TT>
+<DD>
+Calculates the negation of a string. The negation is the set of all
+characters between <code>\x00</code> and <code>\xFF</code> not
+contained in <code>s1</code>.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>s1</B> -  The "class" to be negated.
+<BR><B>s2</B> -  The second "class" to intersect
+<BR><DT><B>Returns:</B><DD>  A new string containing all unique characters. Each character
+must have appeared both <code>s1</code> and <code>s2</code>.<BR><DD></DL><P>
+<A NAME="classCreateRange"></A>
+<A NAME="DOC.3.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string classCreateRange(char low, char hi) const </B></TT>
+<DD>
+Creates a new "class" representing the range from <code>low</code> thru
+<code>hi</code>. This function will wrap if <code>low</code> &gt;
+<code>hi</code>. This is a feature, not a buf. Sometimes it is useful
+to be able to say [\x70-\x10] instead of [\x70-\x7F\x00-\x10].
+
+<DL><DT><DT><B>Parameters:</B><DD><B>low</B> -  The beginning character
+<BR><B>hi</B> -   The ending character
+<BR><DT><B>Returns:</B><DD>  A new string containing all the characters from low thru hi.<BR><DD></DL><P>
+<A NAME="getInt"></A>
+<A NAME="DOC.3.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int getInt(int <!1><A HREF="Matcher.html#DOC.2.4">start</A>, int end)</B></TT>
+<DD>
+Extracts a decimal number from the substring of member-variable
+<code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code> starting at <code>start</code> and
+ending at <code>end</code>.
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Matcher.html#DOC.2.4">start</A> The starting index in <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code>
+<BR><B>end</B> -  The last index in <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code>
+<BR><DT><B>Returns:</B><DD>  The decimal number in <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code><BR><DD></DL><P>
+<A NAME="quantifyCurly"></A>
+<A NAME="DOC.3.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool quantifyCurly(int &amp; sNum, int &amp; eNum)</B></TT>
+<DD>
+Parses a <code>{n,m}</code> string out of the member-variable
+<code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code> stores the result in <code>sNum</code>
+and <code>eNum</code>.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>sNum</B> -  Output parameter. The minimum number of <!1><A HREF="Pattern.html#DOC.3.45">matches</A> required
+by the curly quantifier are stored here.
+<BR><B>eNum</B> -  Output parameter. The maximum number of <!1><A HREF="Pattern.html#DOC.3.45">matches</A> allowed
+by the curly quantifier are stored here.
+<BR><DT><B>Returns:</B><DD>  Success/Failure. Fails when the curly does not have the proper
+syntax<BR><DD></DL><P>
+<A NAME="quantifyGroup"></A>
+<A NAME="DOC.3.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>NFANode* quantifyGroup(NFANode*  <!1><A HREF="Matcher.html#DOC.2.4">start</A>, NFANode*  stop, const int gn)</B></TT>
+<DD>
+Tries to quantify the currently parsed group. If the group being parsed
+is indeed quantified in the member-variable
+<code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A><code>, then the NFA is modified accordingly.
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Matcher.html#DOC.2.4">start</A>  The starting node of the current group being parsed
+<BR><B>stop</B> -    The ending node of the current group being parsed
+<BR><B>gn</B> -      The group number of the current group being parsed
+<BR><DT><B>Returns:</B><DD>  The node representing the starting node of the group. If the
+group becomes quantified, then this node is not necessarily
+a GroupHead node.<BR><DD></DL><P>
+<A NAME="quantify"></A>
+<A NAME="DOC.3.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>NFANode* quantify(NFANode*  newNode)</B></TT>
+<DD>
+Tries to quantify the last parsed expression. If the character was indeed
+quantified, then the NFA is modified accordingly.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>newNode</B> -  The recently created expression node
+<BR><DT><B>Returns:</B><DD>  The node representing the last parsed expression. If the
+expression was quantified, <code>return value != newNode</code><BR><DD></DL><P>
+<A NAME="parseClass"></A>
+<A NAME="DOC.3.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string parseClass()</B></TT>
+<DD>
+Parses the current class being examined in
+<code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A></code>.
+
+<DL><DT><DT><B>Returns:</B><DD>  A string of unique characters contained in the current class being
+parsed<BR><DD></DL><P>
+<A NAME="parsePosix"></A>
+<A NAME="DOC.3.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string parsePosix()</B></TT>
+<DD>
+Parses the current POSIX class being examined in
+<code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A></code>.
+
+<DL><DT><DT><B>Returns:</B><DD>  A string of unique characters representing the POSIX class being
+parsed<BR><DD></DL><P>
+<A NAME="parseOctal"></A>
+<A NAME="DOC.3.25"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string parseOctal()</B></TT>
+<DD>
+Returns a string containing the octal character being parsed
+
+<DL><DT><DT><B>Returns:</B><DD>  The string contained the octal value being parsed<BR><DD></DL><P>
+<A NAME="parseHex"></A>
+<A NAME="DOC.3.26"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string parseHex()</B></TT>
+<DD>
+Returns a string containing the hex character being parsed
+
+<DL><DT><DT><B>Returns:</B><DD>  The string contained the hex value being parsed<BR><DD></DL><P>
+<A NAME="parseBackref"></A>
+<A NAME="DOC.3.27"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>NFANode* parseBackref()</B></TT>
+<DD>
+Returns a new node representing the back reference being parsed
+
+<DL><DT><DT><B>Returns:</B><DD>  The new node representing the back reference being parsed<BR><DD></DL><P>
+<A NAME="parseEscape"></A>
+<A NAME="DOC.3.28"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string parseEscape(bool &amp; inv, bool &amp; quo)</B></TT>
+<DD>
+Parses the escape sequence currently being examined. Determines if the
+escape sequence is a class, a single character, or the beginning of a
+quotation sequence.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>inv</B> -  Output parameter. Whether or not to invert the returned class
+<BR><B>quo</B> -  Output parameter. Whether or not this sequence <!1><A HREF="Matcher.html#DOC.2.5">starts</A> a
+quotation.
+<BR><DT><B>Returns:</B><DD>  The characters represented by the class<BR><DD></DL><P>
+<A NAME="parseRegisteredPattern"></A>
+<A NAME="DOC.3.29"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>NFANode* parseRegisteredPattern(NFANode**  end)</B></TT>
+<DD>
+Parses a supposed registered pattern currently under compilation. If the
+sequence of characters does point to a registered pattern, then the
+registered pattern is appended to <code>*end<code>. The registered pattern
+is parsed with the current compilation flags.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>end</B> -  The ending node of the thus-far compiled <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>
+<BR><DT><B>Returns:</B><DD>  The new end node of the current pattern<BR><DD></DL><P>
+<A NAME="parseBehind"></A>
+<A NAME="DOC.3.30"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>NFANode* parseBehind(const bool pos, NFANode**  end)</B></TT>
+<DD>
+Parses a lookbehind expression. Appends the necessary nodes
+<code>*end</code>.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>pos</B> -  Positive or negative look behind
+<BR><B>end</B> -  The ending node of the current <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>
+<BR><DT><B>Returns:</B><DD>  The new end node of the current pattern<BR><DD></DL><P>
+<A NAME="parseQuote"></A>
+<A NAME="DOC.3.31"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>NFANode* parseQuote()</B></TT>
+<DD>
+Parses the current expression and tacks on nodes until a \E is found.
+
+<DL><DT><DT><B>Returns:</B><DD>  The end of the current pattern<BR><DD></DL><P>
+<A NAME="parse"></A>
+<A NAME="DOC.3.32"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>NFANode* parse(const bool inParen = 0, const bool inOr = 0, NFANode**  end = NULL)</B></TT>
+<DD>
+Parses <code><!1><A HREF="Pattern.html#DOC.3.7">pattern</A></code>. This function is called
+recursively when an or (<code>|</code>) or a group is encountered.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>inParen</B> -  Are we currently parsing inside a group
+<BR><B>inOr</B> -  Are we currently parsing one side of an or (<code>|</code>)
+<BR><B>end</B> -  The end of the current expression
+<BR><DT><B>Returns:</B><DD>  The starting node of the NFA constructed from this parse<BR><DD></DL><P>
+<A NAME="CASE_INSENSITIVE"></A>
+<A NAME="DOC.3.33"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static  const unsigned long CASE_INSENSITIVE</B></TT>
+<DD>We should match regardless of case
+<DL><DT><DD></DL><P>
+<A NAME="LITERAL"></A>
+<A NAME="DOC.3.34"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static  const unsigned long LITERAL</B></TT>
+<DD>We are implicitly quoted
+<DL><DT><DD></DL><P>
+<A NAME="DOT_MATCHES_ALL"></A>
+<A NAME="DOC.3.35"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static  const unsigned long DOT_MATCHES_ALL</B></TT>
+<DD>We should treat a <code><b>.</b></code> as [\x00-\x7F]
+<DL><DT><DD></DL><P>
+<A NAME="MULTILINE_MATCHING"></A>
+<A NAME="DOC.3.36"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static  const unsigned long MULTILINE_MATCHING</B></TT>
+<DD><code>^</code> and <code>$</code> should anchor to the beginning and
+ending of lines, not all input
+<DL><DT><DD></DL><P>
+<A NAME="UNIX_LINE_MODE"></A>
+<A NAME="DOC.3.37"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static  const unsigned long UNIX_LINE_MODE</B></TT>
+<DD>When enabled, only instances of <code>\n</codes> are recognized as
+line terminators
+<DL><DT><DD></DL><P>
+<A NAME="MIN_QMATCH"></A>
+<A NAME="DOC.3.38"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static  const int MIN_QMATCH</B></TT>
+<DD>The absolute minimum number of matches a quantifier can match (0)
+<DL><DT><DD></DL><P>
+<A NAME="MAX_QMATCH"></A>
+<A NAME="DOC.3.39"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static  const int MAX_QMATCH</B></TT>
+<DD>The absolute maximum number of matches a quantifier can match (0x7FFFFFFF)
+<DL><DT><DD></DL><P>
+<A NAME="compile"></A>
+<A NAME="DOC.3.40"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   <!1><A HREF="Pattern.html">Pattern</A>* compile(const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const unsigned long mode = 0)</B></TT>
+<DD>
+Call this function to compile a regular expression into a
+<code>Pattern</code> object. Special values can be assigned to
+<code>mode</code> when certain non-standard behaviors are expected from
+the <code>Pattern</code> object.
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Pattern.html#DOC.3.7">pattern</A> The regular expression to <!1><A HREF="Pattern.html#DOC.3.40">compile</A>
+<BR><B>mode</B> -     A bitwise or of <!1><A HREF="Pattern.html#DOC.3.12">flags</A> signalling what special behaviors are
+wanted from this <code><!1><A HREF="Pattern.html">Pattern</A></code> object
+<BR><DT><B>Returns:</B><DD>  If successful, <code>compile</code> returns a <code>Pattern</code>
+pointer. Upon failure, <code>compile</code> returns
+<code>NULL</code><BR><DD></DL><P>
+<A NAME="compileAndKeep"></A>
+<A NAME="DOC.3.41"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   <!1><A HREF="Pattern.html">Pattern</A>* compileAndKeep(const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const unsigned long mode = 0)</B></TT>
+<DD>
+Dont use this function. This function will compile a pattern, and cache
+the result. This will eventually be used as an optimization when people
+just want to call static methods using the same pattern over and over
+instead of first compiling the pattern and then using the compiled
+instance for matching.
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Pattern.html#DOC.3.7">pattern</A> The regular expression to <!1><A HREF="Pattern.html#DOC.3.40">compile</A>
+<BR><B>mode</B> -     A bitwise or of <!1><A HREF="Pattern.html#DOC.3.12">flags</A> signalling what special behaviors are
+wanted from this <code><!1><A HREF="Pattern.html">Pattern</A></code> object
+<BR><DT><B>Returns:</B><DD>  If successful, <code>compileAndKeep</code> returns a
+<code>Pattern</code> pointer. Upon failure, <code>compile</code>
+returns <code>NULL</code>.<BR><DD></DL><P>
+<A NAME="replace"></A>
+<A NAME="DOC.3.42"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   std::string replace(const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.42">replace</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const unsigned long mode = 0)</B></TT>
+<DD>
+Searches through <code>replace</code> and replaces all substrings matched
+by <code>pattern</code> with <code>str</code>. <code>str</code> may
+contain backreferences (e.g. <code>\1</code>) to capture groups. A typical
+invocation looks like:
+<p>
+<code>
+Pattern::replace("(a+)b(c+)", "abcccbbabcbabc", "\\2b\\1");
+</code>
+<p>
+which would replace <code>abcccbbabcbabc</code> with
+<code>cccbabbcbabcba</code>.
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>  The regular expression
+<BR><B></B> - <!1><A HREF="Pattern.html#DOC.3.42">replace</A>  The string in which to perform replacements
+<BR><B></B> - <!1><A HREF="Matcher.html#DOC.2.3">str</A>      The replacement text
+<BR><B>mode</B> -      The special mode requested of the <code><!1><A HREF="Pattern.html">Pattern</A></code>
+during the replacement process
+<BR><DT><B>Returns:</B><DD>  The text with the replacement string substituted where necessary<BR><DD></DL><P>
+<A NAME="split"></A>
+<A NAME="DOC.3.43"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   std::vector&lt;std::string&gt;  split(const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const bool keepEmptys = 0, const unsigned long limit = 0, const unsigned long mode = 0)</B></TT>
+<DD>
+Splits the specified string over occurrences of the specified pattern.
+Empty strings can be optionally ignored. The number of strings returned is
+configurable. A typical invocation looks like:
+<p>
+<code>
+std::string str(strSize, '\0');<br>
+FILE * fp = fopen(fileName, "r");<br>
+fread((char*)str.data(), strSize, 1, fp);<br>
+fclose(fp);<br>
+<br>
+std::vector&lt;std::string&gt; lines = Pattern::split("[\r\n]+", str, true);<br>
+<br>
+</code>
+
+<P>
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>    The regular expression
+<BR><B></B> - <!1><A HREF="Pattern.html#DOC.3.42">replace</A>    The string to <!1><A HREF="Pattern.html#DOC.3.43">split</A>
+<BR><B>keepEmptys</B> -  Whether or not to keep empty strings
+<BR><B>limit</B> -       The maximum number of splits to make
+<BR><B>mode</B> -        The special mode requested of the <code><!1><A HREF="Pattern.html">Pattern</A></code>
+during the <!1><A HREF="Pattern.html#DOC.3.43">split</A> process
+<BR><DT><B>Returns:</B><DD>  All substrings of <code>str</code> split across <code>pattern</code>.<BR><DD></DL><P>
+<A NAME="findAll"></A>
+<A NAME="DOC.3.44"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   std::vector&lt;std::string&gt;  findAll(const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const unsigned long mode = 0)</B></TT>
+<DD>
+Finds all the instances of the specified pattern within the string. You
+should be careful to only pass patterns with a minimum length of one. For
+example, the pattern <code>a*</code> can be matched by an empty string, so
+instead you should pass <code>a+</code> since at least one character must
+be matched. A typical invocation of <code>findAll</code> looks like:
+<p>
+<code>
+std::vector&lt;td::string&gt; numbers = Pattern::findAll("\\d+", string);
+</code>
+<p>
+
+<P>
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>  The <!1><A HREF="Pattern.html#DOC.3.7">pattern</A> for which to search
+<BR><B></B> - <!1><A HREF="Matcher.html#DOC.2.3">str</A>      The string to search
+<BR><B>mode</B> -      The special mode requested of the <code><!1><A HREF="Pattern.html">Pattern</A></code>
+during the find process
+<BR><DT><B>Returns:</B><DD>  All instances of <code>pattern</code> in <code>str</code><BR><DD></DL><P>
+<A NAME="matches"></A>
+<A NAME="DOC.3.45"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   bool matches(const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const unsigned long mode = 0)</B></TT>
+<DD>
+Determines if an entire string matches the specified pattern
+
+<P>
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>  The <!1><A HREF="Pattern.html#DOC.3.7">pattern</A> for to match
+<BR><B></B> - <!1><A HREF="Matcher.html#DOC.2.3">str</A>      The string to match
+<BR><B>mode</B> -      The special mode requested of the <code><!1><A HREF="Pattern.html">Pattern</A></code>
+during the replacement process
+<BR><DT><B>Returns:</B><DD>  True if <code>str</code> is recognized by <code>pattern</code><BR><DD></DL><P>
+<A NAME="registerPattern"></A>
+<A NAME="DOC.3.46"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   bool registerPattern(const std::string &amp; name, const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const unsigned long mode = 0)</B></TT>
+<DD>
+Registers a pattern under a specific name for use in later compilations.
+A typical invocation and later use looks like:
+<p>
+<code>
+Pattern::registerPattern("ip", "(?:\\d{1,3}\\.){3}\\d{1,3}");<br>
+Pattern * p1 = Pattern::compile("{ip}:\\d+");<br>
+Pattern * p2 = Pattern::compile("Connection from ({ip}) on port \\d+");<br>
+</code>
+<p>
+Multiple calls to <code>registerPattern</code> with the same
+<code>name</code> will result in the pattern getting overwritten.
+
+<P>
+<DL><DT><DT><B>Parameters:</B><DD><B>name</B> -      The name to give to the <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>
+<BR><B></B> - <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>  The <!1><A HREF="Pattern.html#DOC.3.7">pattern</A> to register
+<BR><B>mode</B> -      Any special <!1><A HREF="Pattern.html#DOC.3.12">flags</A> to use when compiling <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>
+<BR><DT><B>Returns:</B><DD>  Success/Failure. Fails only if <code>pattern</code> has invalid
+syntax<BR><DD></DL><P>
+<A NAME="unregisterPatterns"></A>
+<A NAME="DOC.3.47"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void unregisterPatterns()</B></TT>
+<DD>
+Clears the pattern registry
+<DL><DT><DD></DL><P>
+<A NAME="clearPatternCache"></A>
+<A NAME="DOC.3.48"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void clearPatternCache()</B></TT>
+<DD>
+Don't use
+<DL><DT><DD></DL><P>
+<A NAME="findNthMatch"></A>
+<A NAME="DOC.3.49"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   std::pair&lt;std::string, int&gt;  findNthMatch(const std::string &amp; <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>, const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>, const int matchNum, const unsigned long mode = 0)</B></TT>
+<DD>
+Searches through a string for the <code>n<sup>th</sup></code> match of the
+given pattern in the string. Match indeces start at zero, not one.
+A typical invocation looks like this:
+<p>
+<code>
+std::pair&lt;std::string, int&gt; match = Pattern::findNthMatch("\\d{1,3}", "192.168.1.101:22", 1);<br>
+printf("%s %i\n", match.first.c_str(), match.second);<br>
+<br>
+Output: 168 4<br>
+<br>
+
+<P>
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Pattern.html#DOC.3.7">pattern</A>  The <!1><A HREF="Pattern.html#DOC.3.7">pattern</A> for which to search
+<BR><B></B> - <!1><A HREF="Matcher.html#DOC.2.3">str</A>      The string to search
+<BR><B>matchNum</B> -  Which match to find
+<BR><B>mode</B> -      Any special <!1><A HREF="Pattern.html#DOC.3.12">flags</A> to use during the matching process
+<BR><DT><B>Returns:</B><DD>  A string and an integer. The string is the string matched. The
+integer is the starting location of the matched string in
+<code>str</code>. You can check for success/failure by making sure
+that the integer returned is greater than or equal to zero.<BR><DD></DL><P>
+<A NAME="~Pattern"></A>
+<A NAME="DOC.3.50"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ~Pattern()</B></TT>
+<DD>
+Deletes all NFA nodes allocated during compilation
+<DL><DT><DD></DL><P>
+<A NAME="getFlags"></A>
+<A NAME="DOC.3.51"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>unsigned long getFlags() const </B></TT>
+<DD>
+Returns the flags used during compilation of this pattern
+
+<DL><DT><DT><B>Returns:</B><DD>  The flags used during compilation of this pattern<BR><DD></DL><P>
+<A NAME="getPattern"></A>
+<A NAME="DOC.3.52"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>std::string getPattern() const </B></TT>
+<DD>
+Returns the regular expression this pattern represents
+
+<DL><DT><DT><B>Returns:</B><DD>  The regular expression this pattern represents<BR><DD></DL><P>
+<A NAME="createMatcher"></A>
+<A NAME="DOC.3.53"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Matcher.html">Matcher</A>* createMatcher(const std::string &amp; <!1><A HREF="Matcher.html#DOC.2.3">str</A>)</B></TT>
+<DD>
+Creates a matcher object using the specified string and this pattern.
+
+<DL><DT><DT><B>Parameters:</B><DD><B></B> - <!1><A HREF="Matcher.html#DOC.2.3">str</A> The string to match against
+<BR><DT><B>Returns:</B><DD>  A new matcher using object using this pattern and the specified
+string<BR><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Friends:</B><DD>  class <!1><A HREF="Matcher.html">Matcher</A><BR>  class NFANode<BR>  class NFAQuantifierNode<BR><DT><B>Author:</B><DD>Jeffery Stuart
+
+<DT><B>Version:</B><DD>0.01a
+
+<DT><B>Since:</B><DD>March 2003, Stable Since November 2004
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>
